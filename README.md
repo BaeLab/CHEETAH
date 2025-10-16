@@ -3,23 +3,23 @@
 Custom Python code for CHEETAH.  
 This repository contains two parts:
 
-1. **euRptr / peuRptr designer**  
-   A tool for designing recording constructs (Cas9, ABE, PE) and assembling peuRptrs.
-
-2. **DNA Tape analysis**  
+1. **DNA Tape analysis**  
    Original analysis code for SARS-CoV-2 transcript recording using CHEETAH and DNA Tape.
+
+2. **euRptr / peuRptr designer**  
+   A tool for designing recording constructs (Cas9, ABE, PE) and assembling peuRptrs.
 
 ---
 
 ## Repository Structure
 ```
 CHEETAH/
-├── design/      # euRptr/peuRptr design code
-└── analysis/    # Typewriter (DNA Tape) analysis code
+├── analysis/    # Typewriter (DNA Tape) analysis code
+└── design/      # euRptr/peuRptr design code
 ```
 
-- `design/` — code for candidate euRptr design and peuRptr assembly  
 - `analysis/` — code for transcript recording analysis
+- `design/` — code for candidate euRptr design and peuRptr assembly  
 
 ---
 
@@ -32,8 +32,8 @@ cd CHEETAH
 
 Navigate to each module for usage:
 ```bash
-cd design       # euRptr design
 cd analysis     # DNA Tape analysis
+cd design       # euRptr design
 ```
 
 Each folder contains its own `README.md` with details.
