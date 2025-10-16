@@ -5,27 +5,12 @@ def reverse_complement(seq):
     table = str.maketrans("ACGTacgt", "TGCAtgca")
     return seq[::-1].translate(table)
 
-def is_VHHNNN(seq: str) -> bool:
-    """
-    VHHNNN motif:
-      V = A/C/G
-      H = A/C/T
-      H = A/C/T
-      N = any
-      N = any
-      N = any
-    """
+def is_nxxnnn(seq):
     if len(seq) != 6:
         return False
-    v, h1, h2, n1, n2, n3 = seq.upper()
-    return (
-        v in "ACG" and
-        h1 in "ACT" and
-        h2 in "ACT" and
-        n1 in "ACGT" and
-        n2 in "ACGT" and
-        n3 in "ACGT"
-    )
+    seq = seq.upper()
+    # Exclude only motifs with GG in positions 2–3
+    return not (seq[1] == "G" and seq[2] == "G")
 
 def generate_antirepeat_corrected(target_seq):
     if len(target_seq) != 20:
@@ -42,7 +27,7 @@ def design_targets(seq, gene, mode="cas9", edit_window=(1, 10)):
     count = 1
     for i in range(len(seq) - 5):
         motif = seq[i:i+6]
-        if not is_VHHNNN(motif):
+        if not is_nxxnnn(motif):
             continue
         if i < 20 or i + 20 > len(seq):
             continue
