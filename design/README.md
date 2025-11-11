@@ -10,7 +10,7 @@ This project was developed for RNA recording using genome editing tools (Cas9, A
   - Two modes:
     - **Cas9/PE**: standard design
     - **ABE**: requires user-defined editing window (default: 1–10 bp); only designs if an **A** is present in that window
-  - Detects motifs of type **VHHNNN**
+  - Detects motifs of type **NHNNNN**
   - Extracts upstream 20 nt for target sequence
   - Generates modified antirepeat according to defined rules:
     1. Reverse complement of downstream 20 nt
